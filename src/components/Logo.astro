@@ -4,15 +4,16 @@ interface Props {
   light?: boolean;
 }
 const { height = 38, light = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const minH = Math.round(height * 0.7);
 const sizeStyle = `height: clamp(${minH}px, ${height / 10}vw, ${height}px); width: auto;`;
-const fixedSrc = light ? '/images/logo-full-light.png' : null;
+const fixedSrc = light ? `${base}/images/logo-full-light.png` : null;
 const isDynamic = !light;
 ---
 
 <img
   class="logo-mark"
-  src={fixedSrc || '/images/logo-full.png'}
+  src={fixedSrc || `${base}/images/logo-full.png`}
   alt="Río de Libertad"
   width="510"
   height="400"
@@ -28,8 +29,9 @@ const isDynamic = !light;
 </style>
 
 <script>
-  const LIGHT_SRC = '/images/logo-full.png';
-  const DARK_SRC = '/images/logo-full-light.png';
+  const base = document.querySelector('meta[name="base-url"]')?.getAttribute('content') || '';
+  const LIGHT_SRC = base + '/images/logo-full.png';
+  const DARK_SRC = base + '/images/logo-full-light.png';
 
   function updateLogos() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
