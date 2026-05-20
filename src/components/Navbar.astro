@@ -48,12 +48,13 @@ import Logo from './Logo.astro';
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     z-index: 1000;
     background: var(--navbar-bg);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
+    overflow-x: hidden;
   }
 
   .navbar.scrolled {
