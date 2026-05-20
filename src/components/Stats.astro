@@ -1,0 +1,136 @@
+---
+---
+
+<section class="stats-section">
+  <div class="stats-container">
+    <div class="stat reveal" data-target="50" data-suffix="+">
+      <span class="stat-number">0</span>
+      <span class="stat-suffix">+</span>
+      <span class="stat-label">Miembros</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat reveal" data-target="10" data-suffix="+">
+      <span class="stat-number">0</span>
+      <span class="stat-suffix">+</span>
+      <span class="stat-label">Eventos realizados</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat reveal" data-target="500" data-suffix="+">
+      <span class="stat-number">0</span>
+      <span class="stat-suffix">+</span>
+      <span class="stat-label">Asistentes</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat reveal" data-target="2026" data-suffix="">
+      <span class="stat-number">2026</span>
+      <span class="stat-suffix"></span>
+      <span class="stat-label">Año de fundación</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats-section {
+    background: var(--charcoal);
+    padding: 4rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stats-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(224, 178, 25, 0.05), rgba(224, 178, 25, 0.1), rgba(224, 178, 25, 0.05));
+  }
+
+  .stats-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--gold-primary);
+    line-height: 1;
+    display: inline;
+  }
+
+  .stat-suffix {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--gold-primary);
+    vertical-align: super;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+    margin-top: 0.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .stats-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .stat-divider {
+      width: 40px;
+      height: 1px;
+    }
+  }
+</style>
+
+<script>
+  function animateCounters() {
+    const stats = document.querySelectorAll('.stat[data-target]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-target') || '0');
+          const numberEl = el.querySelector('.stat-number');
+          if (!numberEl || target === 2026) return;
+
+          let current = 0;
+          const increment = target / 60;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            numberEl.textContent = Math.floor(current).toString();
+          }, 25);
+
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    stats.forEach(s => observer.observe(s));
+  }
+
+  animateCounters();
+</script>

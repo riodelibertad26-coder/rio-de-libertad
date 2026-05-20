@@ -1,0 +1,489 @@
+---
+---
+
+<section class="hero" id="inicio">
+  <div class="hero-bg">
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-pattern"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Fundación de Ideas Liberales</div>
+    <h1 class="hero-title">
+      <span class="hero-flame">
+        <svg viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 120C30 120 5 95 5 65C5 35 30 15 30 15C30 15 20 45 25 65C30 85 30 120 30 120Z" fill="#947715" opacity="0.8">
+            <animate attributeName="d" dur="3s" repeatCount="indefinite"
+              values="M30 120C30 120 5 95 5 65C5 35 30 15 30 15C30 15 20 45 25 65C30 85 30 120 30 120Z;
+                      M30 120C30 120 3 93 5 63C7 33 28 13 28 13C28 13 22 47 27 67C32 87 30 120 30 120Z;
+                      M30 120C30 120 5 95 5 65C5 35 30 15 30 15C30 15 20 45 25 65C30 85 30 120 30 120Z"/>
+          </path>
+          <path d="M42 120C42 120 15 90 18 58C21 26 42 0 42 0C42 0 32 35 38 58C44 81 42 120 42 120Z" fill="#BD9614">
+            <animate attributeName="d" dur="2.5s" repeatCount="indefinite"
+              values="M42 120C42 120 15 90 18 58C21 26 42 0 42 0C42 0 32 35 38 58C44 81 42 120 42 120Z;
+                      M42 120C42 120 17 88 20 56C23 24 40 2 40 2C40 2 34 37 40 60C46 83 42 120 42 120Z;
+                      M42 120C42 120 15 90 18 58C21 26 42 0 42 0C42 0 32 35 38 58C44 81 42 120 42 120Z"/>
+          </path>
+          <path d="M55 120C55 120 28 88 32 55C36 22 55 5 55 5C55 5 45 40 50 60C55 80 55 120 55 120Z" fill="#E0B219">
+            <animate attributeName="d" dur="2.8s" repeatCount="indefinite"
+              values="M55 120C55 120 28 88 32 55C36 22 55 5 55 5C55 5 45 40 50 60C55 80 55 120 55 120Z;
+                      M55 120C55 120 30 86 34 53C38 20 53 3 53 3C53 3 47 42 52 62C57 82 55 120 55 120Z;
+                      M55 120C55 120 28 88 32 55C36 22 55 5 55 5C55 5 45 40 50 60C55 80 55 120 55 120Z"/>
+          </path>
+        </svg>
+      </span>
+      <span class="title-text">
+        <span class="title-line">Río de</span>
+        <span class="title-line title-accent">Libertad</span>
+      </span>
+    </h1>
+    <p class="hero-slogan" id="heroSlogan"></p>
+    <p class="hero-description">
+      Promovemos las ideas de libertad, el pensamiento crítico y el debate
+      abierto para construir una sociedad más libre y próspera en Bolivia.
+    </p>
+    <div class="hero-cta">
+      <a href="#nosotros" class="btn btn-primary">
+        <span>Conócenos</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+          <path d="M7 17l9.2-9.2M17 17V7H7"/>
+        </svg>
+      </a>
+      <a href="#contacto" class="btn btn-outline">
+        <span>Contáctanos</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+
+  <div class="hero-corner-text">Santa Cruz de la Sierra, Bolivia</div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, rgba(224, 178, 25, 0.06));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--charcoal);
+  }
+
+  :global([data-theme="dark"]) .hero-bg {
+    background: #2b2a27;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(224, 178, 25, 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(189, 150, 20, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(148, 119, 21, 0.06) 0%, transparent 40%);
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E0B219' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    max-width: 900px;
+    animation: heroFadeIn 1.2s ease forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
+  }
+
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.25em;
+    color: var(--gold-primary);
+    border: 1px solid rgba(224, 178, 25, 0.3);
+    padding: 0.5rem 2rem;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  .hero-badge::before,
+  .hero-badge::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background: var(--gold-primary);
+    top: 50%;
+  }
+
+  .hero-badge::before { right: 100%; margin-right: 15px; }
+  .hero-badge::after { left: 100%; margin-left: 15px; }
+
+  .hero-title {
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero-flame svg {
+    width: 80px;
+    height: 120px;
+    filter: drop-shadow(0 0 30px rgba(224, 178, 25, 0.3));
+  }
+
+  .title-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .title-line {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    line-height: 0.9;
+  }
+
+  .title-accent {
+    font-size: 6rem;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-slogan {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    color: var(--gold-primary);
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+    min-height: 1.4em;
+  }
+
+  .hero-slogan::after {
+    content: '|';
+    animation: blink 0.7s step-end infinite;
+    margin-left: 2px;
+  }
+
+  .hero-slogan.typed::after {
+    display: none;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+    line-height: 1.8;
+    max-width: 550px;
+    margin: 0 auto 3rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    padding: 0.9rem 2.5rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary {
+    background: var(--gold-primary);
+    color: var(--charcoal);
+    border: 2px solid var(--gold-primary);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(224, 178, 25, 0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold-primary);
+    color: var(--gold-primary);
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--gold-primary), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 1; height: 60px; }
+    50% { opacity: 0.3; height: 40px; }
+  }
+
+  .hero-corner-text {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 3rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 1.5rem;
+    }
+
+    .hero-badge {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      padding: 0.4rem 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-badge::before, .hero-badge::after { display: none; }
+
+    .hero-title {
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-flame svg {
+      width: 50px;
+      height: 75px;
+    }
+
+    .title-text { text-align: center; }
+    .title-line { font-size: 2.8rem; }
+    .title-accent { font-size: 3.8rem; }
+
+    .hero-slogan {
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0 auto 1.8rem;
+    }
+
+    .btn {
+      font-size: 1rem;
+      padding: 0.8rem 2rem;
+    }
+
+    .hero-scroll, .hero-corner-text { display: none; }
+  }
+
+  @media (max-width: 380px) {
+    .title-line { font-size: 2.4rem; }
+    .title-accent { font-size: 3.2rem; }
+
+    .hero-flame svg {
+      width: 42px;
+      height: 63px;
+    }
+
+    .hero-description {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<script>
+  // Floating particles
+  const canvas = document.getElementById('particles');
+  if (canvas) {
+    const particles: { x: number; y: number; size: number; speedX: number; speedY: number; opacity: number }[] = [];
+    const count = 30;
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 3 + 1,
+        speedX: (Math.random() - 0.5) * 0.02,
+        speedY: -Math.random() * 0.03 - 0.01,
+        opacity: Math.random() * 0.3 + 0.1,
+      });
+    }
+
+    function createParticleElements() {
+      particles.forEach(p => {
+        const el = document.createElement('div');
+        el.style.cssText = `
+          position: absolute;
+          width: ${p.size}px;
+          height: ${p.size}px;
+          background: #E0B219;
+          border-radius: 50%;
+          left: ${p.x}%;
+          top: ${p.y}%;
+          opacity: ${p.opacity};
+          pointer-events: none;
+          transition: left 0.1s linear, top 0.1s linear;
+        `;
+        canvas.appendChild(el);
+      });
+    }
+
+    createParticleElements();
+
+    function animateParticles() {
+      const els = canvas.children;
+      particles.forEach((p, i) => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+        if (p.y < -5) { p.y = 105; p.x = Math.random() * 100; }
+        if (p.x < -5) p.x = 105;
+        if (p.x > 105) p.x = -5;
+        const el = els[i] as HTMLElement;
+        if (el) {
+          el.style.left = p.x + '%';
+          el.style.top = p.y + '%';
+        }
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
+  }
+
+  // Typing effect
+  const slogan = document.getElementById('heroSlogan');
+  if (slogan) {
+    const text = '#ElFuturoEsLiberal';
+    let i = 0;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      slogan.textContent = text;
+      slogan.classList.add('typed');
+    } else {
+      setTimeout(() => {
+        function type() {
+          if (i < text.length) {
+            slogan.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 80);
+          } else {
+            setTimeout(() => slogan.classList.add('typed'), 1500);
+          }
+        }
+        type();
+      }, 2200);
+    }
+  }
+
+  // Parallax on scroll (desktop only)
+  if (window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+      const hero = document.querySelector('.hero-content') as HTMLElement;
+      if (hero) {
+        const scroll = window.scrollY;
+        hero.style.transform = `translateY(${scroll * 0.3}px)`;
+        hero.style.opacity = String(1 - scroll / 800);
+      }
+    });
+  }
+</script>

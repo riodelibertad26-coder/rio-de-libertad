@@ -1,0 +1,115 @@
+---
+---
+
+<section class="newsletter-section">
+  <div class="newsletter-container reveal-scale">
+    <div class="newsletter-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+    </div>
+    <h3>Suscríbete a nuestro boletín</h3>
+    <p>Recibí noticias, artículos y actualizaciones sobre nuestras actividades.</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="Tu correo electrónico" required />
+      <button type="submit">Suscribirse</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .newsletter-section {
+    background: var(--bg-primary);
+    padding: 4rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .newsletter-icon {
+    color: var(--gold-primary);
+    margin-bottom: 1rem;
+  }
+
+  .newsletter-container h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .newsletter-container p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 1rem 1.2rem;
+    border: 2px solid var(--border-color);
+    border-right: none;
+    background: var(--input-bg);
+    color: var(--text-body);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .newsletter-form input:focus {
+    border-color: var(--gold-primary);
+  }
+
+  .newsletter-form button {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    padding: 1rem 2rem;
+    background: var(--charcoal);
+    color: var(--white);
+    border: 2px solid var(--charcoal);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+
+  .newsletter-form button:hover {
+    background: var(--gold-primary);
+    border-color: var(--gold-primary);
+    color: var(--charcoal);
+  }
+
+  @media (max-width: 480px) {
+    .newsletter-form {
+      flex-direction: column;
+    }
+
+    .newsletter-form input {
+      border: 2px solid var(--border-color);
+      border-bottom: none;
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--gold-primary);
+    }
+
+    .newsletter-form button {
+      width: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,167 @@
+---
+const libros = [
+  {
+    titulo: "Título del libro",
+    autor: "Marcelo Añez",
+    descripcion: "Descripción breve del libro y su aporte al pensamiento liberal en Bolivia.",
+    anio: "2024",
+    portada: "",
+  },
+  {
+    titulo: "Título del libro",
+    autor: "Autor por definir",
+    descripcion: "Descripción breve del libro y su contribución al debate de ideas.",
+    anio: "",
+    portada: "",
+  },
+  {
+    titulo: "Título del libro",
+    autor: "Autor por definir",
+    descripcion: "Descripción breve del libro y sus ideas principales.",
+    anio: "",
+    portada: "",
+  },
+];
+---
+
+<section class="section publicaciones" id="publicaciones">
+  <div class="container">
+    <div class="publicaciones-header reveal">
+      <div class="gold-line"></div>
+      <h2 class="section-title">Producción Intelectual</h2>
+      <p class="section-subtitle">Libros y publicaciones de los miembros de nuestra red</p>
+    </div>
+
+    <div class="libros-grid stagger">
+      {libros.map((libro) => (
+        <div class="libro-card">
+          <div class="libro-portada">
+            {libro.portada ? (
+              <img src={libro.portada} alt={libro.titulo} />
+            ) : (
+              <div class="portada-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="36" height="36">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                  <line x1="9" y1="7" x2="15" y2="7"/>
+                  <line x1="9" y1="11" x2="13" y2="11"/>
+                </svg>
+              </div>
+            )}
+            <div class="libro-anio">{libro.anio || '—'}</div>
+          </div>
+          <div class="libro-info">
+            <h3>{libro.titulo}</h3>
+            <span class="libro-autor">{libro.autor}</span>
+            <p>{libro.descripcion}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .publicaciones {
+    background: var(--bg-secondary);
+  }
+
+  .libros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .libro-card {
+    background: var(--bg-card);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 2px 12px var(--card-shadow);
+  }
+
+  .libro-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px var(--card-shadow);
+  }
+
+  .libro-portada {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--charcoal) 0%, #4a4a45 100%);
+  }
+
+  .libro-portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .portada-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-primary);
+    opacity: 0.5;
+  }
+
+  .libro-anio {
+    position: absolute;
+    bottom: 0.8rem;
+    right: 0.8rem;
+    background: var(--gold-primary);
+    color: var(--charcoal);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  .libro-info {
+    padding: 1.5rem;
+  }
+
+  .libro-info h3 {
+    font-size: 1.15rem;
+    color: var(--text-heading);
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  .libro-autor {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    color: var(--gold-primary);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+
+  .libro-info p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .libros-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .libros-grid {
+      grid-template-columns: 1fr;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+</style>

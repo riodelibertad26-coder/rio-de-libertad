@@ -1,0 +1,46 @@
+---
+interface Props {
+  height?: number;
+  light?: boolean;
+}
+const { height = 38, light = false } = Astro.props;
+const minH = Math.round(height * 0.7);
+const sizeStyle = `height: clamp(${minH}px, ${height / 10}vw, ${height}px); width: auto;`;
+const fixedSrc = light ? '/images/logo-full-light.png' : null;
+const isDynamic = !light;
+---
+
+<img
+  class="logo-mark"
+  src={fixedSrc || '/images/logo-full.png'}
+  alt="Río de Libertad"
+  width="510"
+  height="400"
+  style={sizeStyle}
+  data-dynamic={isDynamic ? "true" : undefined}
+/>
+
+<style>
+  .logo-mark {
+    display: block;
+    object-fit: contain;
+  }
+</style>
+
+<script>
+  const LIGHT_SRC = '/images/logo-full.png';
+  const DARK_SRC = '/images/logo-full-light.png';
+
+  function updateLogos() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const src = isDark ? DARK_SRC : LIGHT_SRC;
+    document.querySelectorAll('img.logo-mark[data-dynamic="true"]').forEach(img => {
+      (img as HTMLImageElement).src = src;
+    });
+  }
+
+  updateLogos();
+
+  const observer = new MutationObserver(updateLogos);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+</script>

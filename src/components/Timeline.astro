@@ -1,0 +1,171 @@
+---
+const hitos = [
+  {
+    fecha: "2026",
+    titulo: "Fundación",
+    descripcion: "Nace Río de Libertad en Santa Cruz de la Sierra con la misión de promover las ideas de libertad en Bolivia.",
+  },
+  {
+    fecha: "2026",
+    titulo: "Primeros Encuentros",
+    descripcion: "Organizamos las primeras reuniones y charlas abiertas para dar a conocer nuestra visión y construir comunidad.",
+  },
+  {
+    fecha: "2026",
+    titulo: "Presencia Digital",
+    descripcion: "Lanzamos nuestra plataforma web y canales de comunicación para difundir contenido sobre ideas liberales.",
+  },
+  {
+    fecha: "Próximamente",
+    titulo: "Expansión",
+    descripcion: "Planes de expansión con programas de formación, investigaciones y alianzas con organizaciones afines.",
+  },
+];
+---
+
+<section class="section timeline-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="gold-line"></div>
+      <h2 class="section-title">Nuestra Historia</h2>
+      <p class="section-subtitle">El camino que estamos recorriendo</p>
+    </div>
+
+    <div class="timeline">
+      {hitos.map((h, i) => (
+        <div class={`timeline-item ${i % 2 === 0 ? 'left' : 'right'} reveal`}>
+          <div class="timeline-content">
+            <span class="timeline-date">{h.fecha}</span>
+            <h3>{h.titulo}</h3>
+            <p>{h.descripcion}</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+      ))}
+      <div class="timeline-line"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-section {
+    background: var(--charcoal);
+    color: var(--white);
+  }
+
+  .timeline-section .section-title {
+    color: var(--white);
+  }
+
+  .timeline-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold-primary), rgba(224, 178, 25, 0.2));
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 1.5rem 3rem;
+  }
+
+  .timeline-item.left {
+    left: 0;
+    text-align: right;
+    padding-right: 4rem;
+  }
+
+  .timeline-item.right {
+    left: 50%;
+    text-align: left;
+    padding-left: 4rem;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    top: 2rem;
+    width: 14px;
+    height: 14px;
+    background: var(--gold-primary);
+    border: 3px solid var(--charcoal);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .timeline-item.left .timeline-dot {
+    right: -7px;
+  }
+
+  .timeline-item.right .timeline-dot {
+    left: -7px;
+  }
+
+  .timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s;
+  }
+
+  .timeline-content:hover {
+    border-color: rgba(224, 178, 25, 0.3);
+    background: rgba(224, 178, 25, 0.05);
+  }
+
+  .timeline-date {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    color: var(--gold-primary);
+    letter-spacing: 0.15em;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.4rem;
+    margin: 0.3rem 0 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .timeline-line {
+      left: 20px;
+    }
+
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+      width: 100%;
+      left: 0;
+      text-align: left;
+      padding-left: 50px;
+      padding-right: 0;
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+      left: 13px;
+      right: auto;
+    }
+  }
+</style>

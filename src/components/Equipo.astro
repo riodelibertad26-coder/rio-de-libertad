@@ -1,0 +1,165 @@
+---
+const equipo = [
+  {
+    nombre: "Marcelo Añez",
+    cargo: "Director",
+    bio: "Comprometido con la difusión de las ideas de libertad y el fortalecimiento institucional en Bolivia.",
+    iniciales: "MA",
+  },
+  {
+    nombre: "Diego Villaroel",
+    cargo: "Director",
+    bio: "Trabajando para llevar las ideas liberales a más personas a través de la educación y el debate.",
+    iniciales: "DV",
+  },
+  {
+    nombre: "Carlos Aranda",
+    cargo: "Investigación",
+    bio: "Dedicado al análisis de políticas públicas y la producción de contenido basado en evidencia.",
+    iniciales: "CA",
+  },
+  {
+    nombre: "",
+    cargo: "Comunicaciones",
+    bio: "Conectando las ideas de libertad con la ciudadanía a través de contenido accesible y relevante.",
+    iniciales: "",
+  },
+];
+---
+
+<section class="section equipo" id="equipo">
+  <div class="container">
+    <div class="equipo-header reveal">
+      <div class="gold-line"></div>
+      <h2 class="section-title">Nuestro Equipo</h2>
+      <p class="section-subtitle">Las personas detrás de Río de Libertad</p>
+    </div>
+
+    <div class="equipo-grid stagger">
+      {equipo.map((m) => (
+        <div class={`miembro-card ${!m.nombre ? 'miembro-vacant' : ''}`}>
+          <div class="miembro-foto">
+            <div class="miembro-placeholder">
+              <span>{m.nombre ? m.iniciales : '?'}</span>
+            </div>
+            <div class="miembro-overlay">
+              <div class="overlay-line"></div>
+            </div>
+          </div>
+          <div class="miembro-info">
+            <h3>{m.nombre || 'Próximamente'}</h3>
+            <span class="miembro-cargo">{m.cargo}</span>
+            {m.nombre && <p>{m.bio}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .equipo {
+    background: var(--bg-primary);
+  }
+
+  .equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .miembro-card {
+    text-align: center;
+    transition: transform 0.4s ease;
+  }
+
+  .miembro-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .miembro-foto {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .miembro-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--charcoal) 0%, #4a4a45 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .miembro-placeholder span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--gold-primary);
+    opacity: 0.6;
+  }
+
+  .miembro-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gold-primary);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+
+  .miembro-card:hover .miembro-overlay {
+    transform: scaleX(1);
+  }
+
+  .miembro-info h3 {
+    font-size: 1.3rem;
+    color: var(--text-heading);
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+  }
+
+  .miembro-cargo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.95rem;
+    color: var(--gold-primary);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .miembro-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .miembro-vacant {
+    opacity: 0.45;
+  }
+
+  .miembro-vacant .miembro-placeholder {
+    background: linear-gradient(135deg, var(--charcoal) 0%, #3a3a35 100%);
+  }
+
+  @media (max-width: 768px) {
+    .equipo-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .equipo-grid {
+      grid-template-columns: 1fr;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+</style>

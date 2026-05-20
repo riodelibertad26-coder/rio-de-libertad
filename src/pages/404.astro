@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 | Río de Libertad">
+  <section class="page-404">
+    <div class="page-404-bg"></div>
+    <div class="page-404-content">
+      <div class="page-404-flame">
+        <svg viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 120C30 120 5 95 5 65C5 35 30 15 30 15C30 15 20 45 25 65C30 85 30 120 30 120Z" fill="#947715" opacity="0.8"/>
+          <path d="M42 120C42 120 15 90 18 58C21 26 42 0 42 0C42 0 32 35 38 58C44 81 42 120 42 120Z" fill="#BD9614"/>
+          <path d="M55 120C55 120 28 88 32 55C36 22 55 5 55 5C55 5 45 40 50 60C55 80 55 120 55 120Z" fill="#E0B219"/>
+        </svg>
+      </div>
+      <h1 class="page-404-code">404</h1>
+      <p class="page-404-title">Página no encontrada</p>
+      <p class="page-404-text">
+        El camino hacia la libertad a veces tiene desvíos.<br/>
+        Esta página no existe, pero el futuro sigue siendo liberal.
+      </p>
+      <a href="/" class="page-404-btn">
+        <span>Volver al inicio</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-404 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--charcoal);
+  }
+
+  .page-404-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(224, 178, 25, 0.08) 0%, transparent 60%);
+  }
+
+  .page-404-content {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .page-404-flame {
+    margin-bottom: 1.5rem;
+  }
+
+  .page-404-flame svg {
+    width: 60px;
+    height: 90px;
+    filter: drop-shadow(0 0 20px rgba(224, 178, 25, 0.3));
+    animation: flamePulse404 2s ease-in-out infinite;
+  }
+
+  @keyframes flamePulse404 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  .page-404-code {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8rem;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-404-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .page-404-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+    line-height: 1.8;
+    max-width: 450px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .page-404-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.9rem 2.5rem;
+    background: var(--gold-primary);
+    color: var(--charcoal);
+    border: 2px solid var(--gold-primary);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex-direction: row-reverse;
+  }
+
+  .page-404-btn:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(224, 178, 25, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .page-404-code {
+      font-size: 5rem;
+    }
+
+    .page-404-title {
+      font-size: 1.4rem;
+    }
+
+    .page-404-text {
+      font-size: 0.9rem;
+    }
+
+    .page-404-flame svg {
+      width: 45px;
+      height: 68px;
+    }
+  }
+</style>

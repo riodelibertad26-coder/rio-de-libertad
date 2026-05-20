@@ -1,0 +1,102 @@
+---
+---
+
+<div class="marquee-wrapper">
+  <div class="marquee-track">
+    <div class="marquee-content">
+      <span>Libertad</span>
+      <span class="marquee-dot"></span>
+      <span>Pensamiento Crítico</span>
+      <span class="marquee-dot"></span>
+      <span>Debate Abierto</span>
+      <span class="marquee-dot"></span>
+      <span>Prosperidad</span>
+      <span class="marquee-dot"></span>
+      <span>Responsabilidad Individual</span>
+      <span class="marquee-dot"></span>
+      <span>Estado de Derecho</span>
+      <span class="marquee-dot"></span>
+      <span>Libre Mercado</span>
+      <span class="marquee-dot"></span>
+      <span>Propiedad Privada</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-content" aria-hidden="true">
+      <span>Libertad</span>
+      <span class="marquee-dot"></span>
+      <span>Pensamiento Crítico</span>
+      <span class="marquee-dot"></span>
+      <span>Debate Abierto</span>
+      <span class="marquee-dot"></span>
+      <span>Prosperidad</span>
+      <span class="marquee-dot"></span>
+      <span>Responsabilidad Individual</span>
+      <span class="marquee-dot"></span>
+      <span>Estado de Derecho</span>
+      <span class="marquee-dot"></span>
+      <span>Libre Mercado</span>
+      <span class="marquee-dot"></span>
+      <span>Propiedad Privada</span>
+      <span class="marquee-dot"></span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .marquee-wrapper {
+    background: var(--charcoal);
+    padding: 1.2rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(224, 178, 25, 0.15);
+    border-bottom: 1px solid rgba(224, 178, 25, 0.15);
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marqueeScroll 35s linear infinite;
+  }
+
+  .marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 2rem;
+  }
+
+  .marquee-content span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    white-space: nowrap;
+    transition: color 0.3s;
+  }
+
+  .marquee-dot {
+    width: 6px !important;
+    height: 6px;
+    background: var(--gold-primary);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: inline-block;
+  }
+
+  @keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  :global([data-theme="dark"]) .marquee-wrapper {
+    background: #222120;
+    border-top-color: rgba(224, 178, 25, 0.25);
+    border-bottom-color: rgba(224, 178, 25, 0.25);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+</style>

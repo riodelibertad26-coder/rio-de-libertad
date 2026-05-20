@@ -1,0 +1,250 @@
+---
+---
+
+<section class="section eventos" id="eventos">
+  <div class="container">
+    <div class="reveal">
+      <div class="gold-line"></div>
+      <h2 class="section-title">Eventos</h2>
+      <p class="section-subtitle">Próximas actividades y encuentros</p>
+    </div>
+
+    <div class="eventos-grid stagger">
+      <div class="evento-card evento-featured">
+        <div class="evento-badge">Destacado</div>
+        <div class="evento-date-block">
+          <span class="evento-month">Pronto</span>
+          <span class="evento-day">2026</span>
+        </div>
+        <div class="evento-info">
+          <div class="evento-tag">Lanzamiento</div>
+          <h3>Presentación Oficial</h3>
+          <p>
+            Estamos preparando nuestra presentación oficial. Pronto anunciaremos
+            la fecha y lugar del evento de lanzamiento de Río de Libertad.
+          </p>
+          <div class="evento-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Santa Cruz de la Sierra
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              Por confirmar
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evento-card">
+        <div class="evento-date-block">
+          <span class="evento-month">Pronto</span>
+          <span class="evento-day">2026</span>
+        </div>
+        <div class="evento-info">
+          <div class="evento-tag">Formación</div>
+          <h3>Ciclo de Charlas</h3>
+          <p>
+            Serie de charlas abiertas sobre ideas de libertad, economía
+            y sociedad. Abierto al público general.
+          </p>
+          <div class="evento-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Por confirmar
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evento-card">
+        <div class="evento-date-block">
+          <span class="evento-month">Mensual</span>
+          <span class="evento-day">2026</span>
+        </div>
+        <div class="evento-info">
+          <div class="evento-tag">Comunidad</div>
+          <h3>Club de Lectura</h3>
+          <p>
+            Espacio mensual de lectura y discusión de obras clásicas y
+            contemporáneas del pensamiento liberal.
+          </p>
+          <div class="evento-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Por confirmar
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .eventos {
+    background: var(--bg-primary);
+  }
+
+  .eventos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .evento-featured {
+    grid-column: 1 / -1;
+  }
+
+  .evento-card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .evento-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(224, 178, 25, 0.03);
+    transition: width 0.4s ease;
+  }
+
+  .evento-card:hover::before {
+    width: 100%;
+  }
+
+  .evento-card:hover {
+    border-color: var(--gold-primary);
+    box-shadow: 0 10px 40px rgba(224, 178, 25, 0.1);
+    transform: translateY(-3px);
+  }
+
+  .evento-featured {
+    background: var(--charcoal);
+    border-color: var(--charcoal);
+    color: var(--white);
+  }
+
+  .evento-featured:hover {
+    border-color: var(--gold-primary);
+  }
+
+  .evento-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    background: var(--gold-primary);
+    color: var(--charcoal);
+    padding: 0.3rem 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .evento-date-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    padding: 1rem;
+    border-right: 2px solid var(--gold-primary);
+  }
+
+  .evento-month {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    color: var(--gold-primary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .evento-day {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--gold-primary);
+    line-height: 1;
+  }
+
+  .evento-tag {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    background: var(--gold-primary);
+    color: var(--charcoal);
+    padding: 0.2rem 0.8rem;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .evento-info {
+    position: relative;
+  }
+
+  .evento-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .evento-info p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.6;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+  }
+
+  .evento-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    opacity: 0.5;
+  }
+
+  .evento-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  @media (max-width: 768px) {
+    .eventos-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .evento-card {
+      flex-direction: column;
+    }
+
+    .evento-date-block {
+      border-right: none;
+      border-bottom: 2px solid var(--gold-primary);
+      padding-bottom: 1rem;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+  }
+</style>

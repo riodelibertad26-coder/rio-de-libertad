@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.astro/
+.env
+.DS_Store
+Thumbs.db
+*.pdf
+_page.html
+temp_404.html
+logo.png
+logo sin fondo.png
+logo svg.svg
+Logo Río de Libertad.png
+Manual de Marca Río de Libertad.pdf
+Solicitud de Contenido - Rio de Libertad.md

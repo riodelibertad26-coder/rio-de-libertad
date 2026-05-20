@@ -1,0 +1,204 @@
+---
+---
+
+<section class="section que-hacemos" id="hacemos">
+  <div class="container">
+    <div class="reveal">
+      <div class="gold-line"></div>
+      <h2 class="section-title">Qué Hacemos</h2>
+      <p class="section-subtitle">Nuestras líneas de acción para promover la libertad</p>
+    </div>
+
+    <div class="areas-grid stagger">
+      <div class="area-card">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div class="area-number">01</div>
+        <h3>Investigación</h3>
+        <p>
+          Producimos análisis y estudios sobre políticas públicas, economía y
+          libertades civiles para informar el debate público con evidencia y rigor.
+        </p>
+        <div class="area-footer">
+          <span class="area-tag">Análisis</span>
+          <span class="area-tag">Datos</span>
+          <span class="area-tag">Evidencia</span>
+        </div>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div class="area-number">02</div>
+        <h3>Formación</h3>
+        <p>
+          Organizamos talleres, cursos y programas de formación en filosofía
+          política, economía y pensamiento liberal para jóvenes y profesionales.
+        </p>
+        <div class="area-footer">
+          <span class="area-tag">Talleres</span>
+          <span class="area-tag">Cursos</span>
+          <span class="area-tag">Mentorías</span>
+        </div>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </div>
+        <div class="area-number">03</div>
+        <h3>Difusión</h3>
+        <p>
+          Creamos contenido, publicaciones y campañas que acercan las ideas
+          de libertad a la ciudadanía de forma accesible, visual y relevante.
+        </p>
+        <div class="area-footer">
+          <span class="area-tag">Contenido</span>
+          <span class="area-tag">Redes</span>
+          <span class="area-tag">Publicaciones</span>
+        </div>
+      </div>
+
+      <div class="area-card">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="area-number">04</div>
+        <h3>Comunidad</h3>
+        <p>
+          Construimos una red de personas comprometidas con la libertad,
+          generando espacios de encuentro, diálogo y colaboración permanente.
+        </p>
+        <div class="area-footer">
+          <span class="area-tag">Networking</span>
+          <span class="area-tag">Debate</span>
+          <span class="area-tag">Colaboración</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .que-hacemos {
+    background: var(--bg-secondary);
+  }
+
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .area-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .area-card:hover {
+    border-left-color: var(--gold-primary);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px) translateX(3px);
+  }
+
+  .area-card:hover .area-icon {
+    color: var(--gold-primary);
+    transform: scale(1.1);
+  }
+
+  .area-card:hover .area-number {
+    opacity: 0.15;
+    transform: scale(1.1);
+  }
+
+  .area-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    transition: all 0.4s;
+  }
+
+  .area-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .area-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: var(--gold-primary);
+    opacity: 0.08;
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    line-height: 1;
+    transition: all 0.4s;
+  }
+
+  .area-card h3 {
+    font-size: 1.6rem;
+    color: var(--text-heading);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .area-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .area-footer {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .area-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    background: var(--bg-secondary);
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .area-card:hover .area-tag {
+    background: rgba(224, 178, 25, 0.1);
+    color: var(--gold-dark);
+  }
+
+  @media (max-width: 768px) {
+    .areas-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,237 @@
+---
+---
+
+<section class="section nosotros" id="nosotros">
+  <div class="container">
+    <div class="nosotros-header reveal">
+      <div class="gold-line"></div>
+      <h2 class="section-title">Quiénes Somos</h2>
+    </div>
+
+    <div class="nosotros-grid">
+      <div class="nosotros-text reveal-left">
+        <p class="nosotros-lead">
+          Somos una fundación naciente en Santa Cruz de la Sierra, Bolivia,
+          comprometida con la difusión de las ideas de libertad individual,
+          economía de mercado y gobierno limitado.
+        </p>
+        <p class="nosotros-body">
+          Creemos que la prosperidad y el bienestar de las personas se construyen
+          sobre la base de instituciones que protejan la libertad, la propiedad
+          y el estado de derecho. Trabajamos para promover el debate informado
+          y el pensamiento crítico en nuestra sociedad.
+        </p>
+      </div>
+      <div class="nosotros-visual reveal-right">
+        <div class="visual-card">
+          <div class="visual-flame">
+            <svg viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 120C30 120 5 95 5 65C5 35 30 15 30 15C30 15 20 45 25 65C30 85 30 120 30 120Z" fill="#947715" opacity="0.8"/>
+              <path d="M42 120C42 120 15 90 18 58C21 26 42 0 42 0C42 0 32 35 38 58C44 81 42 120 42 120Z" fill="#BD9614"/>
+              <path d="M55 120C55 120 28 88 32 55C36 22 55 5 55 5C55 5 45 40 50 60C55 80 55 120 55 120Z" fill="#E0B219"/>
+            </svg>
+          </div>
+          <div class="visual-quote">
+            <span class="quote-mark">&ldquo;</span>
+            La libertad no se da, se conquista con ideas.
+            <span class="quote-mark">&rdquo;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nosotros-values stagger">
+      <div class="value">
+        <div class="value-icon-wrapper">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="value-number">01</span>
+        </div>
+        <h3>Libertad Individual</h3>
+        <p>Defendemos los derechos y libertades fundamentales de cada persona como pilar de una sociedad próspera.</p>
+      </div>
+      <div class="value">
+        <div class="value-icon-wrapper">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <span class="value-number">02</span>
+        </div>
+        <h3>Pensamiento Crítico</h3>
+        <p>Fomentamos el análisis riguroso y el debate abierto de ideas para formar ciudadanos informados.</p>
+      </div>
+      <div class="value">
+        <div class="value-icon-wrapper">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <span class="value-number">03</span>
+        </div>
+        <h3>Prosperidad</h3>
+        <p>Promovemos políticas que generen desarrollo económico y oportunidades para todos los bolivianos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .nosotros {
+    background: var(--bg-primary);
+    position: relative;
+  }
+
+  .nosotros-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+
+  .nosotros-lead {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text-heading);
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .nosotros-body {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.9;
+  }
+
+  .visual-card {
+    background: var(--charcoal);
+    padding: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visual-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-darker), var(--gold-primary), var(--gold-light));
+  }
+
+  .visual-flame svg {
+    width: 50px;
+    height: 75px;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .visual-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  .quote-mark {
+    font-size: 2rem;
+    color: var(--gold-primary);
+    vertical-align: -0.2em;
+  }
+
+  .nosotros-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .value {
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+  }
+
+  .value::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--gold-primary);
+    transition: width 0.4s ease;
+  }
+
+  .value:hover {
+    border-color: var(--gold-primary);
+    box-shadow: 0 15px 40px rgba(224, 178, 25, 0.12);
+    transform: translateY(-8px);
+  }
+
+  .value:hover::after {
+    width: 100%;
+  }
+
+  .value-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+  }
+
+  .value-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--gold-primary);
+  }
+
+  .value-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .value-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--border-color);
+    line-height: 1;
+  }
+
+  .value h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-heading);
+    text-transform: uppercase;
+  }
+
+  .value p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .nosotros-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .nosotros-values {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>
